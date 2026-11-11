@@ -1,5 +1,5 @@
 # Работа с паролями в PHP: `password_hash` и `password_verify`
-да
+
 ## 1. `password_hash` — создаёт хеш пароля
 
 ### Что делает
