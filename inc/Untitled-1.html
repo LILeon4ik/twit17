@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Карточка товара </title>
+
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f2f2f2
+                padding: 30px;
+            }
+            .product-card {
+                background-color: white;
+                width: 300px;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            h2 {
+                color: #333;
+            }
+            .price {
+                color: green;
+                font-size: 20px;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <h1> Карточка товара</h1>
+        <div id="product"></div>
+        <script>
+            const product-card = {
+                title: "Стильное кресло",
+                basePrice:15000,
+                discountPercentage: 20,
+                getFinalPrice() {
+                    return this.basePrice * (1 - this.discountPercentage / 100);
+                },
+                render() {
+                    const finalPrice = this.getFinalPrice();
+
+                    return `
+                     <div class= "productCard">
+                      <h2>${this.title}</h2>
+                      <p> Цена без скидки: $ {this.basePrice} руб.</p>
+                      <p> Скидка:$ {this.discountPercentage}%</p>
+                      <p class= "price">
+                        Цена со скидкой: $ {finalPrice} руб.
+                        </p>
+                        </div>
+                       ` ;
+                } 
+                       };
+
+                       document.getElementById("product"). innerHTML = productCard.render();
+                       console.log(productCard.render());
+        </script>
+    </body>
+</html>
